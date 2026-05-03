@@ -13,7 +13,7 @@ if [ -n "$DOLPHIN_SERVICE" ]; then
         org.kde.dolphin.MainWindow.quit
     
     # Wait for it to die
-    sleep 0.5
+    #sleep 0.5
     
     # Reopen it (it will pick up new colors)
     dolphin &
@@ -25,8 +25,8 @@ fi
 
 #Reload matugen colorscheme in all running nvim instances
 
-echo "$(date): looking for sockets" >> /tmp/matugen-hook.log
-ls /run/user/$(id -u)/nvim.*.sock >> /tmp/matugen-hook.log 2>&1
+echo "$(date): looking for sockets" #>> /tmp/matugen-hook.log
+ls /run/user/$(id -u)/nvim.*.sock #>> /tmp/matugen-hook.log 2>&1
 for socket in /run/user/$(id -u)/nvim.*.sock; do
     if [ -S "$socket" ]; then
         echo "$(date): reloading $socket" >> /tmp/matugen-hook.log

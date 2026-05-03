@@ -5,6 +5,15 @@ input_path = '~/.config/matugen/hyprland.module'
 output_path = '~/.config/matugen/hyprland-colors.conf'
 post_hook = 'hyprctl reload'
 
+[templates.nvim-colors]
+input_path = '~/.config/matugen/nvim-colors.module'
+output_path = '~/.config/nvim/lua/matugen-colors.lua'
+
+[templates.kde-colors]
+input_path = '~/.config/matugen/kde-colors.module'
+output_path = '~/.local/share/color-schemes/matugen-colors.colors'
+post_hook = '~/.config/matugen/reload-dolphin.sh'
+
 [templates.hyprlock]
 input_path = '~/.config/matugen/hyprlock.module'
 output_path = '~/.config/matugen/hyprlock-colors.conf'
@@ -43,14 +52,7 @@ post_hook =  'adwaita-steam-gtk -i'
 input_path = '~/.config/matugen/wlogout.module'
 output_path = '~/.config/matugen/wlogout-colors.conf'
 
-[templates.nvim-colors]
-input_path = '~/.config/matugen/nvim-colors.module'
-output_path = '~/.config/nvim/lua/matugen-colors.lua'
 
-[templates.kde-colors]
-input_path = '~/.config/matugen/kde-colors.module'
-output_path = '~/.local/share/color-schemes/matugen-colors.colors'
-post_hook = '~/.config/matugen/reload-dolphin.sh'
 
 
 
