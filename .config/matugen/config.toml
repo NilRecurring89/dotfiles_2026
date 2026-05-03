@@ -1,0 +1,66 @@
+[config]
+# ...
+[templates.hyprland]
+input_path = '~/.config/matugen/hyprland.module'
+output_path = '~/.config/matugen/hyprland-colors.conf'
+post_hook = 'hyprctl reload'
+
+[templates.hyprlock]
+input_path = '~/.config/matugen/hyprlock.module'
+output_path = '~/.config/matugen/hyprlock-colors.conf'
+
+[templates.starship]
+input_path = '~/.config/matugen/starship.module'
+output_path = '~/.config/starship.toml'
+
+# ...
+[templates.kitty]
+input_path = '~/.config/matugen/kitty.module'
+output_path = '~/.config/kitty/themes/Matugen.conf'
+post_hook = "bash -c 'for socket in /tmp/mykitty-*; do kitty @ --to unix://$socket set-colors --all ~/.config/kitty/themes/Matugen.conf; done'"
+# ...
+
+[templates.rofi]
+input_path = '~/.config/matugen/rofi.module'
+output_path = '~/.config/rofi/colors.rasi'
+
+[templates.waybar]
+input_path = '~/.config/matugen/waybar.module'
+output_path = '~/.config/waybar/colors.css'
+post_hook = 'pkill -SIGUSR2 waybar'
+
+[templates.pywalfox]
+input_path  = "~/.config/matugen/pywalfoxzen.module"
+output_path = "~/.cache/wal/colors.json"
+post_hook = 'pywalfox update'
+
+[templates.steam]
+input_path = '~/.config/matugen/steam.module'
+output_path = '~/.config/AdwSteamGtk/custom.css'
+post_hook =  'adwaita-steam-gtk -i'
+
+[templates.wlogout]
+input_path = '~/.config/matugen/wlogout.module'
+output_path = '~/.config/matugen/wlogout-colors.conf'
+
+[templates.nvim-colors]
+input_path = '~/.config/matugen/nvim-colors.module'
+output_path = '~/.config/nvim/lua/matugen-colors.lua'
+
+[templates.kde-colors]
+input_path = '~/.config/matugen/kde-colors.module'
+output_path = '~/.local/share/color-schemes/matugen-colors.colors'
+post_hook = '~/.config/matugen/reload-dolphin.sh'
+
+
+
+
+#[templates.gtk3]
+#input_path = '~/.config/matugen/gtk3.module'
+#output_path = '~/.config/gtk-3.0/colors.css'
+#post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme ""; gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-dark && pkill -x thunar || true'
+
+
+#[templates.gtk4]
+#input_path = 'path/to/template'
+#output_path = '~/.config/gtk-4.0/colors.css'

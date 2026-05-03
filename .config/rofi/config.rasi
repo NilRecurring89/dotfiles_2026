@@ -1,0 +1,95 @@
+@import "colors.rasi"
+
+configuration {
+    show-icons:   true;
+    sidebar-mode: false;
+}
+
+* {
+    background-color: transparent;
+    text-color:       #cdd6f4ff;
+    spacing:          0;
+}
+
+#window {
+    font:             "JetBrainsMono Nerd Font 14";
+    fullscreen:       false;
+    transparency:     "background";
+    background-color: #1e1e2e95;
+    width:            600px;
+    height:           400px;
+    location:         center;
+    anchor:           center;
+    border:           1px;
+    border-radius:    28px;
+    border-color:     @primary;
+    children:         [ mainbox ];
+}
+
+#mainbox {
+    expand:   true;
+    padding:  12px;
+    children: [ inputbar, listview ];
+}
+
+#inputbar {
+    background-color: #2a2a3d95;
+    text-color:       #cdd6f4ff;
+    padding:          10px 14px;
+    border-radius:    8px;
+    children:         [ prompt, entry, case-indicator ];
+}
+
+#prompt {
+    text-color: #89b4faff;
+    padding:    0px 8px 0px 0px;
+}
+
+#entry {
+    text-color: #cdd6f4ff;
+}
+
+#case-indicator {
+    text-color: #6c7086ff;
+}
+
+#listview {
+    expand:       true;
+    padding:      10px 0px 0px 0px;
+    border:       0;
+    scrollbar:    false;
+    spacing:      0;
+}
+
+/* Normal items — brighter text */
+#element normal.normal {
+    background-color: transparent;
+    text-color:       #cdd6f4ff;
+    padding:          10px 14px;
+    border-radius:    6px;
+}
+
+/* Alternate items — slightly dimmer text */
+#element alternate.normal {
+    background-color: transparent;
+    text-color:       #7f849cff;
+    padding:          10px 14px;
+    border-radius:    6px;
+}
+
+/* Selected item */
+#element selected.normal {
+    background-color: #2a2a3d60;
+    text-color:       #89b4faff;
+    padding:          10px 14px;
+    border-radius:    6px;
+}
+
+#element-icon {
+    size:    24px;
+    padding: 0px 10px 0px 0px;
+}
+
+#element-text {
+    vertical-align: 0.5;
+}

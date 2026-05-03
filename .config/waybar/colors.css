@@ -1,0 +1,13 @@
+/* ~/.config/matugen/waybar.module */
+
+@define-color primary #d0cb54;
+@define-color primary-container #4b4900;
+@define-color on-primary #343200;
+@define-color secondary #ceca74;
+@define-color tertiary #94d5a9;
+@define-color surface #0c160f;
+@define-color surface-variant #374b3d;
+@define-color on-surface #dae6da;
+@define-color error #ffb4ab;
+
+/* These variables can now be used in your waybar style.css */

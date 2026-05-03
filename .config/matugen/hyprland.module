@@ -1,0 +1,11 @@
+# These placeholders will be replaced by Matugen hex codes
+# ~/.config/matugen/hyprland.module
+general {
+    col.active_border = rgba({{colors.primary.default.hex_stripped}}ff) rgba({{colors.secondary.default.hex_stripped}}ff) 45deg
+    col.inactive_border = rgba({{colors.surface_variant.default.hex_stripped}}ff)
+}
+
+group {
+    col.border_active = rgba({{colors.primary.default.hex_stripped}}ff)
+    col.border_inactive = rgba({{colors.surface_variant.default.hex_stripped}}ff)
+}
