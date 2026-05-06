@@ -9,7 +9,6 @@
 
 window#waybar {
   background: transparent;
-
  }
 
 #custom-logo {
@@ -20,8 +19,8 @@ window#waybar {
 	font-weight: bold;
 	margin-top: 4px;
 	margin-bottom: 4px; */
-	padding-left: 15px;
-	padding-right: 5px;
+	padding-left: 30px;
+	padding-right: 20px;
 	margin-right: 5px;
 	color: @primary;
 
@@ -30,11 +29,46 @@ window#waybar {
 
 
 .modules-center {
-  padding: 0 15px;
   margin-top: 2px;
-  border-radius: 28px;
-  background: #1c1c1c;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 1);
+  padding: 0 15px;
+  border-radius: 43px / 29px;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  background: linear-gradient(#1c1c1c, #1c1c1c) padding-box,
+              linear-gradient(135deg, @primary 40%, @tertiary 60%) border-box;
+  /*box-shadow: 5px 0 0 0 @tertiary;
+              -5px 0 0 0 @tertiary;*/
+}
+
+.modules-right {
+  margin-right: 0;
+  padding: 0 0 0 15px;
+  margin-top: 2px;
+  border-radius: 43px 0 0 43px / 29px 0 0 29px;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-left: 15px solid transparent;
+  background: linear-gradient(#1c1c1c, #1c1c1c) padding-box,
+              linear-gradient(315deg, transparent 20%, @secondary 80%) border-box;
+  box-shadow: -5px 0 0 0 @tertiary,
+              -15px 0 0 0 @tertiary;
+}
+
+.modules-left {
+  margin-left: 0;
+  padding: 0 15px 0 0;
+  margin-top: 2px;
+  border-radius: 0 43px 43px 0 / 0 29px 29px 0;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-right: 15px solid transparent;
+  background: linear-gradient(#1c1c1c, #1c1c1c) padding-box,
+              linear-gradient(135deg, transparent 20%, @secondary 80%) border-box;
+  box-shadow: 5px 0 0 0 @tertiary,
+              /*10px 0 0 0 @secondary,*/
+              15px 0 0 0 @tertiary;
 }
 
 

@@ -1,11 +1,13 @@
 {
-  "layer": "top", "position": "top", "margin": 18,
+  "layer": "top", "position": "top", "margin": 9,
 
-  "modules-center": [ "custom/logo", "clock", "hyprland/workspaces", "pulseaudio", "tray"],
+  "modules-left": [ "custom/logo", "hyprland/workspaces", "pulseaudio", "tray"],
+  "modules-center": [ "clock" ],
+  "modules-right": [ "cpu", "memory", "temperature", "disk" ],
 
   "exclusive": true,
   "passthrough": false,
-  "margin-top": 20,
+  "margin-top": 10,
   "margin-bottom": 3,
 
  
