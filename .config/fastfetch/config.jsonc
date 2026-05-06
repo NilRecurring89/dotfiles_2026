@@ -1,12 +1,12 @@
 {
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
     "logo": {
-    	"source": "/home/james/Downloads/void_knight_150px.png",
+    	"source": "~/.config/fastfetch/void_knight_brushstroke_160px.png",
     	"type": "kitty-direct",
-    	"width": 10,
+    	"width": 20,
     	"height": 9,
     	"padding": {
-        "top": 1,
+        "top": 2,
         "left": 2
     	}
     },
