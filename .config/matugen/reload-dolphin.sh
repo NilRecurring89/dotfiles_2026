@@ -20,18 +20,22 @@ if [ -n "$DOLPHIN_SERVICE" ]; then
 fi
 
 
+reload_nvim() {
+    echo "$(date): looking for sockets" >> /tmp/matugen-hook.log
+    ls /run/user/$(id -u)/nvim.*.sock >> /tmp/matugen-hook.log 2>&1
+    for socket in /run/user/$(id -u)/nvim.*.sock; do
+        if [ -S "$socket" ]; then
+            echo "$(date): reloading $socket" >> /tmp/matugen-hook.log
+            timeout 2 nvim --server "$socket" \
+                --remote-send '<Esc>:lua reload_matugen()<CR>' \
+                >/dev/null 2>&1 || rm "$socket"
+        fi
+    done
+}
 
-#sleep 2 
+# First attempt - matugen may not have written nvim-colors.lua yet
+reload_nvim
 
-#Reload matugen colorscheme in all running nvim instances
-
-echo "$(date): looking for sockets" #>> /tmp/matugen-hook.log
-ls /run/user/$(id -u)/nvim.*.sock #>> /tmp/matugen-hook.log 2>&1
-for socket in /run/user/$(id -u)/nvim.*.sock; do
-    if [ -S "$socket" ]; then
-        echo "$(date): reloading $socket" >> /tmp/matugen-hook.log
-        timeout 2 nvim --server "$socket" \
-    	--remote-send '<Esc>:lua reload_matugen()<CR>' \
-    	>/dev/null 2>&1 || rm "$socket"
-    fi
-done
+# Retry after 5s in the background so this script exits immediately,
+# avoiding blocking other matugen post_hooks (waybar, hyprland, etc.)
+(sleep 0.5 && reload_nvim) &

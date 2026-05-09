@@ -3,7 +3,7 @@
 
   "modules-left": [ "custom/logo", "hyprland/workspaces", "pulseaudio", "tray"],
   "modules-center": [ "clock" ],
-  "modules-right": [ "cpu", "memory", "temperature", "disk" ],
+  "modules-right": [ "custom/clipboard", "cpu", "memory", "temperature", "disk" ],
 
   "exclusive": true,
   "passthrough": false,
@@ -51,7 +51,7 @@
 
 "custom/clipboard":{
   "format":"",
-  "on-click": "cliphist list | rofi -dmenu | cliphist decode | wl-copy",
+  "on-click": "cliphist list | head -20 | rofi -dmenu | cliphist decode | wl-copy",
   "interval":86400
 },
 

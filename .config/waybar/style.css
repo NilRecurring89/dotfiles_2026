@@ -44,7 +44,7 @@ window#waybar {
 
 .modules-right {
   margin-right: 0;
-  padding: 0 0 0 15px;
+  padding: 0 15px 0 15px;
   margin-top: 2px;
   border-radius: 43px 0 0 43px / 29px 0 0 29px;
   border-top: 1px solid transparent;
@@ -93,9 +93,13 @@ window#waybar {
 	padding-right: 15px;
 
 }
+#custom-clipboard {
+	padding-left: 15px;
+}
+
 #window,
 #workspaces {
-	
+
 }
 #workspaces button {
 	color: grey;
@@ -153,4 +157,29 @@ window#waybar {
         background-color: #ffffff;
         color: #000000;
     }
+}
+
+menu {
+    font-size: 9px;
+    background-color: #1c1c1c;
+    color: @on-surface;
+    border: 1px solid @surface-variant;
+    border-radius: 6px;
+    padding: 4px 0;
+}
+
+menuitem {
+    font-size: 9px;
+    padding: 4px 12px;
+    border-radius: 4px;
+}
+
+menuitem:hover {
+    background-color: @surface-variant;
+    color: @on-surface;
+}
+
+menu separator {
+    background-color: @surface-variant;
+    margin: 4px 0;
 }

@@ -12,7 +12,7 @@ configuration {
 }
 
 #window {
-    font:             "JetBrainsMono Nerd Font 14";
+    font:             "SF Mono Regular 16px";
     fullscreen:       false;
     transparency:     "background";
     background-color: #1e1e2e95;

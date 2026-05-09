@@ -4,7 +4,7 @@
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-
+fastfetch
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles_2026/ --work-tree=$HOME'
 alias up='sudo pacman -Syu'
 alias ins='sudo pacman -S '
