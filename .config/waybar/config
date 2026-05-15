@@ -1,9 +1,9 @@
 {
   "layer": "top", "position": "top", "margin": 9,
 
-  "modules-left": [ "custom/logo", "hyprland/workspaces", "pulseaudio", "tray"],
+  "modules-left": [ "custom/logo", "custom/sep-logo-ws-1", "custom/sep-logo-ws-2", "hyprland/workspaces", "pulseaudio", "tray", "custom/sep-right"],
   "modules-center": [ "clock" ],
-  "modules-right": [ "custom/clipboard", "cpu", "memory", "temperature", "disk" ],
+  "modules-right": [ "custom/sep-left", "custom/clipboard", "cpu", "memory", "temperature", "temperature#gpu", "disk" ],
 
   "exclusive": true,
   "passthrough": false,
@@ -129,14 +129,14 @@
 
   "cpu": {
       "interval": 1,
-      "format": " {usage}%",
+      "format": "CPU  {usage}%",
       "min-length": 6,
-      "max-length": 6,
+      "max-length": 8,
       "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
  },
 
 "memory": {
-  "format": " {percentage}%"
+  "format": "RAM  {percentage}%"
 },
 
  "hyprland/window": {
@@ -148,11 +148,12 @@
 },
 
 "temperature": {
-  "format": " {temperatureC}°C",            
+  "thermal-zone": 3,
+  "format": " {temperatureC}°C",
   "format-critical": " {temperatureC}°C",
   "interval": 1,
   "critical-threshold": 80,
-  "on-click": "foot btop",
+  "on-click": "foot btop"
  },
 
 "pulseaudio": {
@@ -200,7 +201,39 @@
     "interval": 1,
     "exec": "~/.config/waybar/scripts/powerdraw.sh",
     "return-type": "json"
+  },
+
+  "custom/sep-right": {
+    "format": "<span foreground='#1c1c1c'></span>",
+    "tooltip": false,
+    "interval": "once"
+  },
+
+  "custom/sep-left": {
+    "format": "<span foreground='#1c1c1c'></span>",
+    "tooltip": false,
+    "interval": "once"
+  },
+
+  "custom/sep-logo-ws-1": {
+    "format": "",
+    "tooltip": false,
+    "interval": "once"
+  },
+
+  "custom/sep-logo-ws-2": {
+    "format": "",
+    "tooltip": false,
+    "interval": "once"
+  },
+
+  "temperature#gpu": {
+    "hwmon-path": "/sys/class/hwmon/hwmon2/temp2_input",
+    "format": "󰍹  {temperatureC}°C",
+    "format-critical": "󰍹  {temperatureC}°C",
+    "interval": 1,
+    "critical-threshold": 95,
+    "on-click": "foot btop"
   }
 
 }
-

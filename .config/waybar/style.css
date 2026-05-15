@@ -2,14 +2,71 @@
 
 * {
     border: none;
-    font-size: 20px;
-    font-family: "SF Mono", monospace ;
+    font-size: 16px;
+    font-family: "Inter";
     min-height: 25px;
 }
 
 window#waybar {
   background: transparent;
  }
+
+#custom-logo,
+#workspaces,
+#pulseaudio,
+#tray,
+#clock,
+#custom-clipboard,
+#cpu,
+#memory,
+#temperature,
+#disk {
+  background: #1c1c1c;
+}
+
+#temperature.gpu {
+  background: #1c1c1c;
+}
+
+#custom-sep-logo-ws-1 {
+  color: #1c1c1c;
+  background: @tertiary;
+  font-size: 35px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  min-height: 0;
+  font-family: "SF Pro";
+}
+
+#custom-sep-logo-ws-2 {
+  color:@primary;
+  background: #1c1c1c;
+  font-size: 35px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  min-height: 0;
+  font-family: "SF Pro";
+}
+
+#custom-sep-right,
+#custom-sep-left {
+  background: transparent;
+  font-size: 35px;
+  padding: 0;
+  border: none;
+  min-height: 0;
+  font-family: "SF Pro";
+  letter-spacing: -2px;
+}
+
+#custom-sep-right,
+#custom-sep-left {
+  color: @tertiary;
+  /*opacity: 0.5;*/
+  margin: 0 0 0 0;
+}
 
 #custom-logo {
 /*	background: linear-gradient(135deg, #ffb7ce, #bbd0ff); 
@@ -21,7 +78,6 @@ window#waybar {
 	margin-bottom: 4px; */
 	padding-left: 30px;
 	padding-right: 20px;
-	margin-right: 5px;
 	color: @primary;
 
 }
@@ -30,45 +86,30 @@ window#waybar {
 
 .modules-center {
   margin-top: 2px;
-  padding: 0 15px;
-  border-radius: 43px / 29px;
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid transparent;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  background: linear-gradient(#1c1c1c, #1c1c1c) padding-box,
-              linear-gradient(135deg, @primary 40%, @tertiary 60%) border-box;
-  /*box-shadow: 5px 0 0 0 @tertiary;
-              -5px 0 0 0 @tertiary;*/
+  padding: 0 98px;
+  background: linear-gradient(to right, alpha(@primary, 0) 0%, alpha(@primary, 0.8) 98px, alpha(@tertiary, 0.8) calc(100% - 98px), alpha(@tertiary, 0) 100%);
+  border: none;
+  border-radius: 0;
 }
 
 .modules-right {
   margin-right: 0;
-  padding: 0 15px 0 15px;
   margin-top: 2px;
-  border-radius: 43px 0 0 43px / 29px 0 0 29px;
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid transparent;
-  border-left: 15px solid transparent;
-  background: linear-gradient(#1c1c1c, #1c1c1c) padding-box,
-              linear-gradient(315deg, transparent 20%, @secondary 80%) border-box;
-  box-shadow: -5px 0 0 0 @tertiary,
-              -15px 0 0 0 @tertiary;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .modules-left {
   margin-left: 0;
-  padding: 0 15px 0 0;
   margin-top: 2px;
-  border-radius: 0 43px 43px 0 / 0 29px 29px 0;
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid transparent;
-  border-right: 15px solid transparent;
-  background: linear-gradient(#1c1c1c, #1c1c1c) padding-box,
-              linear-gradient(135deg, transparent 20%, @secondary 80%) border-box;
-  box-shadow: 5px 0 0 0 @tertiary,
-              /*10px 0 0 0 @secondary,*/
-              15px 0 0 0 @tertiary;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 
@@ -96,10 +137,13 @@ window#waybar {
 #custom-clipboard {
 	padding-left: 15px;
 }
+#disk {
+	padding-right: 30px;
+}
 
 #window,
 #workspaces {
-
+	padding-left: 15px;
 }
 #workspaces button {
 	color: grey;
@@ -107,11 +151,13 @@ window#waybar {
 }
 
 #workspaces button.active {
-/*	background: linear-gradient(135deg, #ffb7ce, #bbd0ff); */
-	background: linear-gradient(135deg, @primary 30%, @tertiary 70%);
-	color: #1c1c1c;
+	background: transparent;
+	border-style: solid;
+	border-width: 0 0 3px 0;
+	border-image: linear-gradient(to right, @primary 30%, @tertiary 70%) 1;
+	color: @on-surface;
 	min-width: 40px;
-	border-radius: 20px;
+	border-radius: 0;
 	padding: 0px 10px;
 	transition: all 0.3s ease-in-out;
 	font-weight: bold;
@@ -126,10 +172,11 @@ window#waybar {
 }
 
 #clock {
-
+  background: transparent;
+  border: none;
   padding-left: 20px;
   padding-right: 20px;
-  color: @secondary;
+  color: #1a1a1a;
 }
 #pulseaudio {
   padding-top: 3px;

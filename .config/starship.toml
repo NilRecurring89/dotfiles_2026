@@ -4,10 +4,10 @@ format = """
 [▓](#666666)\
 [▓](#4a4a4a)\
 [▓](#303030)\
-[  ](bg:#1c1c1c fg:#d0cb54)\
-[](bg:#d0cb54 fg:#1c1c1c)\
+[  ](bg:#1c1c1c fg:#ffb2b6)\
+[](bg:#ffb2b6 fg:#1c1c1c)\
 $directory\
-[](fg:#d0cb54 bg:#394260)\
+[](fg:#ffb2b6 bg:#394260)\
 $git_branch\
 $git_status\
 [](fg:#394260 bg:#212736)\
@@ -22,7 +22,7 @@ $time\
 \n$character"""
 
 [directory]
-style = "fg:#1c1c1c bg:#d0cb54" 
+style = "fg:#1c1c1c bg:#ffb2b6" 
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
